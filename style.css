@@ -156,7 +156,7 @@ html {
 
 #header .search-btn {
     cursor: pointer;
-    padding: 13.5px 24px;
+    padding: 12px 24px;
     text-decoration: none;
 }
 
@@ -331,18 +331,14 @@ html {
 #contact .send {
     border: none;
     margin-top: 16px;
+    margin-bottom: 16px;
     padding: 11px 17px;
     border-radius: 2px;;
 }
 
-
-.map-section {
-   padding-top: 48px;
-}
-
-.map-section img {
-    width: 100%;
-    filter: grayscale(50%);
+.map {
+    margin-bottom: -5px;
+    /* filter: grayscale(50%); */
 }
 
 #footer .socials-list {
