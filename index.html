@@ -20,7 +20,7 @@
                 <li><a href="#tour">Tour</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
-                    <a href="#"> More
+                    <a href="#">More
                         <i class="nav-arrow-dow ti-arrow-circle-down"></i>
                     </a>
                     <ul class="subnav background-fff">
@@ -32,15 +32,15 @@
             </ul>
             <!-- End nav -->
             
-            <!-- begin search btn -->
+            <!-- begin search & menu  btn -->
+            <div id="mobile-menu" class="mobile-menu-btn push-right">
+                <i class="menu-icon text-white ti-menu"></i>
+            </div>
+            
             <div class="search-btn push-right">
                 <i href="" class="search-icon ti-search text-white"></i>                   
             </div>
-
-            <!-- <div class="moblie-menu-btn push-right">
-                <i class="menu-icon ti-menu text-white"></i>
-            </div> -->
-            <!-- end search btn -->
+            <!-- end search & menu  btn -->
         </div>
 
         <!-- begin slider -->
@@ -240,6 +240,39 @@
         modalContainer.addEventListener('click', function (event) {
             event.stopPropagation()
         })
+    </script>
+
+    <script>
+        //begin đóng mở mobile menu
+        var header = document.getElementById('header');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var headerHeight = header.clientHeight; //Lưu chiều cao của header
+
+        mobileMenu.onclick = function () {
+            var isClosed = header.clientHeight === headerHeight; //sử dụng biến dòng 249 để so sánh
+            if (isClosed) {
+                header.style.height = 'auto';
+            } else {
+                header.style.height = null;
+            }
+        }  
+        //  end đóng mở mobile menu
+
+        //  Tự động đóng khi chọn menu (tru more)
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]'); //Lấy ra all thẻ a có href khác #
+        for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+            
+            menuItem.onclick = function(event) {
+                var isParentMenu = this.nextElementSibling && this.menuItem.nextElementSibling.classList.contains("subnav"); //Nếu mà có thẻ con và thẻ đó chứa class là subnav
+                if (isParentMenu) {
+                    event.preventDefault();
+                }
+                else {
+                    header.style.height = null;                 
+                }
+            }
+        }
     </script>
 </body>
 </html>

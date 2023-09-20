@@ -90,7 +90,6 @@ html {
     height: 46px;
     position: fixed;
     background-color: #000;
-    box-shadow: 0 0 7px rgba(201, 220, 209, 0.4);
 }
 
 #nav,
@@ -120,6 +119,7 @@ html {
     display: block;
 }
 
+
 #nav > li:hover > a,
 #nav .subnav  li:hover a {
     color: #000;
@@ -128,7 +128,6 @@ html {
 
 #nav .nav-arrow-dow {
     font-size: 13px;
-    letter-spacing: 5px;
 }
 
 #nav .subnav {
@@ -154,6 +153,7 @@ html {
     display: block;
 }
 
+#header .mobile-menu-btn,
 #header .search-btn {
     cursor: pointer;
     font-weight: 900;
@@ -161,12 +161,28 @@ html {
     text-decoration: none;
 }
 
+#header .menu-icon,
 #header .search-icon {
     font-size: 16px;
 }
 
 #header .search-btn:hover {
     background-color: #f44336;
+}
+
+#header .mobile-menu-btn:hover {
+    background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover .menu-icon {
+    color: #000;
+}
+
+#header .mobile-menu-btn {
+    top: 0;
+    right: 0;
+    display: none;
+    position: absolute;
 }
 /* end header */
 
